@@ -169,7 +169,7 @@ export default function HeroOrbit() {
       const pitch = (-3 * Math.sin(theta)) * pitchMultiplier;
       const yaw = (6 * Math.cos(theta)) * yawMultiplier;
       
-      const zIndex = Math.round(10 + depth * 10);
+      const zIndex = mobile ? Math.round(depth * 5) : Math.round(10 + depth * 10);
 
       return (
         <div
