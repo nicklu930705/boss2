@@ -13,7 +13,7 @@ export default function Navbar() {
       <nav className="max-w-[1280px] mx-auto bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-2xl border border-slate-100">
         <div className="px-4 sm:px-6">
           <div className="flex justify-between h-16 items-center">
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center hidden md:block">
               <Link to="/" className="text-xl font-bold tracking-wider text-slate-900">
                 侑安國際<span className="text-primary-600 text-sm ml-2 hidden sm:inline">包裝與清潔用品</span>
               </Link>

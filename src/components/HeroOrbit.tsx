@@ -117,7 +117,7 @@ export default function HeroOrbit() {
   const w = dimensions.w;
   const h = dimensions.h;
   const mobile = w > 0 && w < 600;
-  const n = mobile ? 10 : 12;
+  const n = mobile ? 6 : 12;
   
   // Pad items to length 12 by repeating
   const displayItems = Array.from({ length: 12 }, (_, i) => heroItems[i % heroItems.length]);
