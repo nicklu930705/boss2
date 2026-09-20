@@ -210,7 +210,8 @@ export default function HeroOrbit() {
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-all duration-300 overflow-hidden hover:scale-110 hover:shadow-2xl hover:z-50"
+            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-all duration-500 ease-out overflow-hidden hover:scale-[4] sm:hover:scale-[3.5] md:hover:scale-[3] hover:shadow-2xl hover:z-[100] active:scale-[3.8]"
+            style={{ transformOrigin: 'center center' }}
           >
             <img 
               src={item.coverImg} 
