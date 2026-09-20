@@ -208,7 +208,7 @@ export default function HeroOrbit() {
       
       {/* Central Brand Text - Safely in the middle */}
       <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-auto flex flex-col items-center text-center w-full max-w-[280px] sm:max-w-[320px] md:max-w-[450px] p-3"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-auto flex flex-col items-center text-center w-full max-w-[280px] sm:max-w-[320px] md:max-w-[450px] p-3"
       >
         <h1 className="text-[32px] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-extrabold text-slate-900 mb-2 tracking-tight">
           {mobile ? (
