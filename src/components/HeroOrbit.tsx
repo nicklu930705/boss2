@@ -101,8 +101,29 @@ export default function HeroOrbit() {
   const heroItems = heroProductIds.map(id => {
     const p = products.find(p => p.id === id);
     if (!p) return null;
-    const hasSpecs = p.specs && p.specs.length > 0;
-    let coverImg = hasSpecs ? (p.specs[0]?.images?.[0]?.path || p.shared_images?.[0]?.path) : (p.images[0]?.path || '');
+    
+    // Find the first available image path
+    let coverImg = '';
+    
+    // Check main images
+    if (p.images && p.images.length > 0) {
+      coverImg = p.images[0].path;
+    }
+    
+    // Check specs images if not found
+    if (!coverImg && p.specs && p.specs.length > 0) {
+      for (const spec of p.specs) {
+        if (spec.images && spec.images.length > 0) {
+          coverImg = spec.images[0].path;
+          break;
+        }
+      }
+    }
+    
+    // Check shared_images if still not found
+    if (!coverImg && p.shared_images && p.shared_images.length > 0) {
+      coverImg = p.shared_images[0].path;
+    }
     
     // Override image for specific cleaning bag
     if (id === '01_清潔袋-01_一般捲取式-大_45L') {
@@ -189,12 +210,12 @@ export default function HeroOrbit() {
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-colors overflow-hidden"
+            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-all duration-300 overflow-hidden hover:scale-110 hover:shadow-2xl hover:z-50"
           >
             <img 
               src={item.coverImg} 
               alt={item.name} 
-              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" 
+              className="w-full h-full object-contain" 
             />
           </Link>
         </div>
