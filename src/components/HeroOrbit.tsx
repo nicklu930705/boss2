@@ -191,7 +191,11 @@ export default function HeroOrbit() {
             to={`/products/${encodeURIComponent(item.id)}`}
             className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-colors overflow-hidden"
           >
-            <img src={item.coverImg} alt={item.name} className="w-full h-full object-contain" />
+            <img 
+              src={item.coverImg} 
+              alt={item.name} 
+              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" 
+            />
           </Link>
         </div>
       );
