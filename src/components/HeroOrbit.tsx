@@ -200,14 +200,34 @@ export default function HeroOrbit() {
       const isThisHovered = hoveredIndex === i;
       
       const finalZIndex = isThisHovered ? 200 : zIndexBase;
-      const finalX = isThisHovered ? w * 0.5 : x;
-      const finalY = isThisHovered ? h * 0.5 : y;
-      const finalScale = isThisHovered 
-        ? (mobile ? Math.min(w * 0.85, 450) / base : Math.min(w * 0.5, 500) / base)
-        : scale;
+      
+      // Calculate max allowed scale to stay within screen
+      const maxScale = Math.min(
+        (w * 0.95) / base, // Max 95% of width
+        (h * 0.8) / base   // Max 80% of height
+      );
+      
+      const finalScale = isThisHovered ? Math.min(maxScale, 3.5) : scale;
       const finalRoll = isThisHovered ? 0 : roll;
       const finalPitch = isThisHovered ? 0 : pitch;
       const finalYaw = isThisHovered ? 0 : yaw;
+
+      // Adjust position if scaled item would go off-screen
+      let finalX = x;
+      let finalY = y;
+      
+      if (isThisHovered) {
+        const halfSize = (base * finalScale) / 2;
+        const padding = 20;
+        
+        // Clamp X
+        if (finalX - halfSize < padding) finalX = halfSize + padding;
+        if (finalX + halfSize > w - padding) finalX = w - halfSize - padding;
+        
+        // Clamp Y
+        if (finalY - halfSize < padding) finalY = halfSize + padding;
+        if (finalY + halfSize > h - padding) finalY = h - halfSize - padding;
+      }
 
       return (
         <div
@@ -220,7 +240,7 @@ export default function HeroOrbit() {
             height: `${base}px`,
             zIndex: finalZIndex,
             transform: `translate3d(${finalX}px,${finalY}px,0) translate(-50%,-50%) scale(${finalScale}) rotate(${finalRoll}deg) perspective(1100px) rotateX(${finalPitch}deg) rotateY(${finalYaw}deg)`,
-            transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), z-index 0.3s'
+            transition: isThisHovered ? 'transform 0.4s ease-out, z-index 0.2s' : 'transform 0.6s ease-out, z-index 0.3s'
           }}
         >
           <Link
