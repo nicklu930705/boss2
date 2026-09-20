@@ -184,19 +184,9 @@ export default function HeroOrbit() {
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-colors"
+            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-colors overflow-hidden"
           >
             <img src={item.coverImg} alt={item.name} className="w-full h-full object-contain" />
-            
-            {/* Tooltip on hover (desktop only) */}
-            {!mobile && (
-              <div className="absolute inset-x-0 -bottom-2 translate-y-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
-                <div className="bg-slate-900 text-white text-xs font-medium py-2 px-3 rounded-lg shadow-xl text-center break-keep min-w-[120px] max-w-[200px] mx-auto">
-                  {item.name}
-                  <div className="text-primary-300 text-[10px] mt-1">查看規格 ↗</div>
-                </div>
-              </div>
-            )}
           </Link>
         </div>
       );
