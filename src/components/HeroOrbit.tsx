@@ -203,7 +203,8 @@ export default function HeroOrbit() {
       const yaw = (6 * Math.cos(theta)) * yawMultiplier;
       
       const zIndexBase = mobile ? Math.round(depth * 5) : Math.round(10 + depth * 10);
-      const isThisHovered = hoveredIndex === i;
+      // Disable hover effect on mobile to prevent animation jittering/resetting
+      const isThisHovered = !mobile && hoveredIndex === i;
       
       const finalZIndex = isThisHovered ? 200 : zIndexBase;
       
