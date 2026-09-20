@@ -6,7 +6,6 @@ import { products } from '../data/store';
 // Pick representative products for the orbit (as close to 12 items for full orbit loop)
 const heroProductIds = [
   '01_清潔袋-01_一般捲取式-大_45L',
-  '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
@@ -103,7 +102,13 @@ export default function HeroOrbit() {
     const p = products.find(p => p.id === id);
     if (!p) return null;
     const hasSpecs = p.specs && p.specs.length > 0;
-    const coverImg = hasSpecs ? (p.specs[0]?.images?.[0]?.path || p.shared_images?.[0]?.path) : (p.images[0]?.path || '');
+    let coverImg = hasSpecs ? (p.specs[0]?.images?.[0]?.path || p.shared_images?.[0]?.path) : (p.images[0]?.path || '');
+    
+    // Override image for specific cleaning bag
+    if (id === '01_清潔袋-01_一般捲取式-大_45L') {
+      coverImg = 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=%E5%8F%B0%E5%A1%91%E6%B8%85%E6%BD%94%E8%A2%8B%2C%20transparent%20plastic%20bag%20roll%20with%20blue%20text%20and%20rainbow%20stripes%20on%20the%20left%20side%2C%20white%20background%2C%20isolated&image_size=square';
+    }
+
     return {
       id: p.id,
       name: p.name,
