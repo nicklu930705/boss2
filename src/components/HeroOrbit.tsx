@@ -68,14 +68,20 @@ export default function HeroOrbit() {
       if (!isActuallyPaused) {
         const dt = lastTimeRef.current ? Math.min((now - lastTimeRef.current) / 1000, 0.05) : 0;
         phaseRef.current = (phaseRef.current + (dt * TAU) / 42) % TAU;
-        // Trigger a re-render to update positions.
-        // We do this by updating a dummy state or just forcing re-render.
-        // Since we want high perf, setting state every frame in React might be slow,
-        // but for compatibility with React component structure, we'll update phase state.
         setPhaseState(phaseRef.current); 
       }
       lastTimeRef.current = now;
       requestRef.current = requestAnimationFrame(tick);
+    };
+
+    // Mobile performance: Use a slightly lower framerate or check for passive touch listeners
+    // The current requestAnimationFrame is fine, but ensure transitions don't clash
+    const touchHandler = (e: TouchEvent) => {
+      // Prevent accidental scrolling while interacting with orbit if needed
+      // but only if we are specifically touching a card
+      if ((e.target as HTMLElement).closest('.pointer-events-auto')) {
+        // e.preventDefault();
+      }
     };
 
     requestRef.current = requestAnimationFrame(tick);
@@ -128,7 +134,7 @@ export default function HeroOrbit() {
     
     // Override image for specific cleaning bag
     if (id === '01_清潔袋-01_一般捲取式-大_45L') {
-      coverImg = 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=%E5%8F%B0%E5%A1%91%E6%B8%85%E6%BD%94%E8%A2%8B%2C%20transparent%20plastic%20bag%20roll%20with%20blue%20text%20and%20rainbow%20stripes%20on%20the%20left%20side%2C%20white%20background%2C%20isolated&image_size=square';
+      coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/規格圖__IMG_0222.JPG';
     }
 
     return {
@@ -240,7 +246,10 @@ export default function HeroOrbit() {
             height: `${base}px`,
             zIndex: finalZIndex,
             transform: `translate3d(${finalX}px,${finalY}px,0) translate(-50%,-50%) scale(${finalScale}) rotate(${finalRoll}deg) perspective(1100px) rotateX(${finalPitch}deg) rotateY(${finalYaw}deg)`,
-            transition: isThisHovered ? 'transform 0.4s ease-out, z-index 0.2s' : 'transform 0.6s ease-out, z-index 0.3s'
+            transition: isThisHovered 
+              ? 'transform 0.3s ease-out, z-index 0.1s' 
+              : 'transform 0.5s ease-out, z-index 0.2s',
+            willChange: 'transform, z-index'
           }}
         >
           <Link
