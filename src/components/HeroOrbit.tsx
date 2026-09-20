@@ -20,22 +20,12 @@ export default function HeroOrbit() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   // Animation state matching the reference exactly
-  const requestRef = useRef<number>(0);
-  const phaseRef = useRef<number>(0.45); // Starting phase from reference
-  const lastTimeRef = useRef<number>(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  const [dimensions, setDimensions] = useState({ w: 0, h: 0 });
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia?.('(prefers-reduced-motion: reduce)');
-    if (mediaQuery) {
-      setIsPaused(mediaQuery.matches);
-      const listener = (e: MediaQueryListEvent) => setIsPaused(e.matches);
-      mediaQuery.addEventListener('change', listener);
-      return () => mediaQuery.removeEventListener('change', listener);
-    }
-  }, []);
+    const requestRef = useRef<number>(0);
+    const phaseRef = useRef<number>(0.45); // Starting phase from reference
+    const lastTimeRef = useRef<number>(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    
+    const [dimensions, setDimensions] = useState({ w: 0, h: 0 });
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;
@@ -72,16 +62,6 @@ export default function HeroOrbit() {
       }
       lastTimeRef.current = now;
       requestRef.current = requestAnimationFrame(tick);
-    };
-
-    // Mobile performance: Use a slightly lower framerate or check for passive touch listeners
-    // The current requestAnimationFrame is fine, but ensure transitions don't clash
-    const touchHandler = (e: TouchEvent) => {
-      // Prevent accidental scrolling while interacting with orbit if needed
-      // but only if we are specifically touching a card
-      if ((e.target as HTMLElement).closest('.pointer-events-auto')) {
-        // e.preventDefault();
-      }
     };
 
     requestRef.current = requestAnimationFrame(tick);
