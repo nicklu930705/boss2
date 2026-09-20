@@ -9,8 +9,8 @@ export default function Navbar() {
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="sticky top-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 pb-2 bg-gradient-to-b from-white/80 to-transparent backdrop-blur-sm">
-      <nav className="max-w-[1280px] mx-auto relative">
+    <div className="sticky top-0 z-50 px-4 sm:px-6 lg:px-8 pt-4 pb-2 md:bg-gradient-to-b md:from-white/80 md:to-transparent md:backdrop-blur-sm pointer-events-none">
+      <nav className="max-w-[1280px] mx-auto relative pointer-events-auto">
         <div className="hidden md:block bg-white shadow-[0_4px_20px_rgba(0,0,0,0.05)] rounded-2xl border border-slate-100 px-4 sm:px-6">
           <div className="flex justify-between h-16 items-center">
             <div className="flex-shrink-0 flex items-center">
