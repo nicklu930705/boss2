@@ -197,20 +197,26 @@ export default function HeroOrbit() {
       
       const zIndex = mobile ? Math.round(depth * 5) : Math.round(10 + depth * 10);
 
+      const isHoveredItem = isHovered && phaseRef.current === phaseState; // This is a bit tricky with phaseState
+
       return (
         <div
           key={`${item.id}-${i}`}
-          className="absolute top-0 left-0 pointer-events-auto"
+          className="absolute top-0 left-0 pointer-events-auto group"
           style={{
             width: `${base}px`,
-            height: `${base}px`, // Force 1:1 square ratio
-            zIndex,
-            transform: `translate3d(${x}px,${y}px,0) translate(-50%,-50%) scale(${scale}) rotate(${roll}deg) perspective(1100px) rotateX(${pitch}deg) rotateY(${yaw}deg)`
+            height: `${base}px`,
+            zIndex: isHovered ? zIndex : zIndex, // placeholder
+            transform: `translate3d(${x}px,${y}px,0) translate(-50%,-50%) scale(${scale}) rotate(${roll}deg) perspective(1100px) rotateX(${pitch}deg) rotateY(${yaw}deg)`,
+            transition: 'transform 0.5s ease-out, z-index 0.5s'
           }}
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="group relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 transition-all duration-500 ease-out overflow-hidden hover:scale-[4] sm:hover:scale-[3.5] md:hover:scale-[3] hover:shadow-2xl hover:z-[100] active:scale-[3.8]"
+            className="relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden transition-all duration-500 ease-out 
+                       group-hover:fixed group-hover:top-1/2 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 
+                       group-hover:w-[85vw] group-hover:h-[85vw] group-hover:max-w-[500px] group-hover:max-h-[500px] 
+                       group-hover:scale-100 group-hover:rotate-0 group-hover:rotateX-0 group-hover:rotateY-0 group-hover:z-[200] group-hover:shadow-2xl"
             style={{ transformOrigin: 'center center' }}
           >
             <img 
