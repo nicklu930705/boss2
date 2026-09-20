@@ -17,6 +17,7 @@ const heroProductIds = [
 export default function HeroOrbit() {
   const [isPaused, setIsPaused] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   // Animation state matching the reference exactly
   const requestRef = useRef<number>(0);
@@ -195,29 +196,36 @@ export default function HeroOrbit() {
       const pitch = (-3 * Math.sin(theta)) * pitchMultiplier;
       const yaw = (6 * Math.cos(theta)) * yawMultiplier;
       
-      const zIndex = mobile ? Math.round(depth * 5) : Math.round(10 + depth * 10);
-
-      const isHoveredItem = isHovered && phaseRef.current === phaseState; // This is a bit tricky with phaseState
+      const zIndexBase = mobile ? Math.round(depth * 5) : Math.round(10 + depth * 10);
+      const isThisHovered = hoveredIndex === i;
+      
+      const finalZIndex = isThisHovered ? 200 : zIndexBase;
+      const finalX = isThisHovered ? w * 0.5 : x;
+      const finalY = isThisHovered ? h * 0.5 : y;
+      const finalScale = isThisHovered 
+        ? (mobile ? Math.min(w * 0.85, 450) / base : Math.min(w * 0.5, 500) / base)
+        : scale;
+      const finalRoll = isThisHovered ? 0 : roll;
+      const finalPitch = isThisHovered ? 0 : pitch;
+      const finalYaw = isThisHovered ? 0 : yaw;
 
       return (
         <div
           key={`${item.id}-${i}`}
-          className="absolute top-0 left-0 pointer-events-auto group"
+          className="absolute top-0 left-0 pointer-events-auto"
+          onMouseEnter={() => setHoveredIndex(i)}
+          onMouseLeave={() => setHoveredIndex(null)}
           style={{
             width: `${base}px`,
             height: `${base}px`,
-            zIndex: isHovered ? zIndex : zIndex, // placeholder
-            transform: `translate3d(${x}px,${y}px,0) translate(-50%,-50%) scale(${scale}) rotate(${roll}deg) perspective(1100px) rotateX(${pitch}deg) rotateY(${yaw}deg)`,
-            transition: 'transform 0.5s ease-out, z-index 0.5s'
+            zIndex: finalZIndex,
+            transform: `translate3d(${finalX}px,${finalY}px,0) translate(-50%,-50%) scale(${finalScale}) rotate(${finalRoll}deg) perspective(1100px) rotateX(${finalPitch}deg) rotateY(${finalYaw}deg)`,
+            transition: 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), z-index 0.3s'
           }}
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden transition-all duration-500 ease-out 
-                       group-hover:fixed group-hover:top-1/2 group-hover:left-1/2 group-hover:-translate-x-1/2 group-hover:-translate-y-1/2 
-                       group-hover:w-[85vw] group-hover:h-[85vw] group-hover:max-w-[500px] group-hover:max-h-[500px] 
-                       group-hover:scale-100 group-hover:rotate-0 group-hover:rotateX-0 group-hover:rotateY-0 group-hover:z-[200] group-hover:shadow-2xl"
-            style={{ transformOrigin: 'center center' }}
+            className="relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300"
           >
             <img 
               src={item.coverImg} 
