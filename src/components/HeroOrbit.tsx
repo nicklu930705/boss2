@@ -134,7 +134,7 @@ export default function HeroOrbit() {
     
     // Override image for specific cleaning bag
     if (id === '01_清潔袋-01_一般捲取式-大_45L') {
-      coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/規格圖__IMG_0222.JPG';
+      coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/台塑清潔袋｜大型 45L.jpeg';
     }
 
     return {
