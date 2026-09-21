@@ -109,7 +109,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "中",
       "capacity_or_dim": "20L",
-      "quantity": ""
+      "quantity": "依實際包裝"
     }
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "大",
       "capacity_or_dim": "45L",
-      "quantity": ""
+      "quantity": "依實際包裝"
     }
   },
   {
@@ -153,7 +153,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "特大",
       "capacity_or_dim": "70L",
-      "quantity": ""
+      "quantity": "依實際包裝"
     }
   },
   {
@@ -175,7 +175,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "超大",
       "capacity_or_dim": "90L",
-      "quantity": ""
+      "quantity": "依實際包裝"
     }
   },
   {
@@ -197,7 +197,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "超小",
       "capacity_or_dim": "10L",
-      "quantity": ""
+      "quantity": "依實際包裝"
     }
   },
   {
@@ -483,7 +483,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "感染袋",
       "capacity_or_dim": "多尺寸",
-      "quantity": ""
+      "quantity": "依需求訂製"
     }
   },
   {
@@ -517,7 +517,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "200x300mm",
       "capacity_or_dim": "150枚",
-      "quantity": ""
+      "quantity": "150枚/盒"
     }
   },
   {
@@ -551,7 +551,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "280x410mm",
       "capacity_or_dim": "100枚",
-      "quantity": ""
+      "quantity": "100枚/盒"
     }
   },
   {
@@ -595,7 +595,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "00特小號",
       "capacity_or_dim": "35x40mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -617,7 +617,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "00號",
       "capacity_or_dim": "40x60mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -639,7 +639,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "01號",
       "capacity_or_dim": "50x70mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -661,7 +661,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "02號",
       "capacity_or_dim": "60x85mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -683,7 +683,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "03號",
       "capacity_or_dim": "70x100mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -705,7 +705,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "04號",
       "capacity_or_dim": "85x120mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {

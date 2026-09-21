@@ -129,11 +129,15 @@ export default function ProductDetail() {
                   <table className="w-full text-sm text-left">
                     <tbody className="divide-y divide-slate-100">
                       <tr>
-                        <th className="py-2 text-slate-500 w-24">尺寸</th>
+                        <th className="py-2 text-slate-500 w-24">款式/尺寸</th>
+                        <td className="py-2 font-medium">{selectedSpec.label} ({selectedSpec.size})</td>
+                      </tr>
+                      <tr>
+                        <th className="py-2 text-slate-500">容量/規格</th>
                         <td className="py-2 font-medium">{selectedSpec.dimensions.join(' × ')} cm</td>
                       </tr>
                       <tr>
-                        <th className="py-2 text-slate-500">每盒張數</th>
+                        <th className="py-2 text-slate-500">包裝數量</th>
                         <td className="py-2 font-medium">{selectedSpec.sheets_per_box} 張</td>
                       </tr>
                       {selectedSpec.barcode && (
@@ -157,33 +161,23 @@ export default function ProductDetail() {
                 </div>
               ) : (
                 <div className="mb-6">
-                  {product.parsedSpec && (
-                    <>
-                      <h3 className="text-lg font-bold mb-3 border-b border-slate-100 pb-2">商品規格</h3>
-                      <table className="w-full text-sm text-left mb-4">
-                        <tbody className="divide-y divide-slate-100">
-                          {product.parsedSpec.size_or_type && (
-                            <tr>
-                              <th className="py-2 text-slate-500 w-24">款式/尺寸</th>
-                              <td className="py-2 font-medium">{product.parsedSpec.size_or_type}</td>
-                            </tr>
-                          )}
-                          {product.parsedSpec.capacity_or_dim && (
-                            <tr>
-                              <th className="py-2 text-slate-500">容量/規格</th>
-                              <td className="py-2 font-medium">{product.parsedSpec.capacity_or_dim}</td>
-                            </tr>
-                          )}
-                          {product.parsedSpec.quantity && (
-                            <tr>
-                              <th className="py-2 text-slate-500">包裝數量</th>
-                              <td className="py-2 font-medium">{product.parsedSpec.quantity}</td>
-                            </tr>
-                          )}
-                        </tbody>
-                      </table>
-                    </>
-                  )}
+                  <h3 className="text-lg font-bold mb-3 border-b border-slate-100 pb-2">商品規格</h3>
+                  <table className="w-full text-sm text-left mb-4">
+                    <tbody className="divide-y divide-slate-100">
+                      <tr>
+                        <th className="py-2 text-slate-500 w-24">款式/尺寸</th>
+                        <td className="py-2 font-medium">{product.parsedSpec?.size_or_type || '-'}</td>
+                      </tr>
+                      <tr>
+                        <th className="py-2 text-slate-500">容量/規格</th>
+                        <td className="py-2 font-medium">{product.parsedSpec?.capacity_or_dim || '-'}</td>
+                      </tr>
+                      <tr>
+                        <th className="py-2 text-slate-500">包裝數量</th>
+                        <td className="py-2 font-medium">{product.parsedSpec?.quantity || '-'}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                   
                   {product.categoryId === '01_清潔袋' && (
                     <div className="mt-4 text-sm text-slate-600 bg-slate-50 p-3 rounded">
