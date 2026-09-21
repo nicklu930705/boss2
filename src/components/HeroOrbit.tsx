@@ -122,7 +122,7 @@ export default function HeroOrbit() {
       coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/大＿45L封面圖.png';
     }
     if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
-      coverImg = '/assets/01_清潔袋/02_拉繩式/大_45L_24張/大_45L_24張封面圖.png';
+      coverImg = '/assets/01_清潔袋/02_拉繩式/大_45L_24張/drawstring_45l_24.png';
     }
     if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
       coverImg = '/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/306.jpg';
