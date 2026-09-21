@@ -45,7 +45,7 @@ export const categories = [
       {
         "id": "02_營潔平板式耐熱袋",
         "name": "營潔平板式耐熱袋",
-        "cover": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/四兩裝_15.5x19.5cm/yingjie_bag_main.jpg"
+        "cover": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/306.jpg"
       }
     ]
   },
@@ -563,7 +563,7 @@ export const products = [
     "images": [
       {
         "role": "包裝正面圖",
-        "path": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/四兩裝_15.5x19.5cm/yingjie_bag_main.jpg",
+        "path": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/306.jpg",
         "note": "HDPE高密度聚乙烯，360張±5%",
         "order": 0
       }
