@@ -6,6 +6,7 @@ import { products } from '../data/store';
 // Pick representative products for the orbit (as close to 12 items for full orbit loop)
 const heroProductIds = [
   '01_清潔袋-01_一般捲取式-大_45L',
+  '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
@@ -112,9 +113,12 @@ export default function HeroOrbit() {
       coverImg = p.shared_images[0].path;
     }
     
-    // Override image for specific cleaning bag
+    // Override image for specific cleaning bags
     if (id === '01_清潔袋-01_一般捲取式-大_45L') {
       coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/大＿45L封面圖.png';
+    }
+    if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
+      coverImg = '/assets/01_清潔袋/02_拉繩式/大_45L_24張/大＿45L_24張封面圖.png';
     }
 
     return {
