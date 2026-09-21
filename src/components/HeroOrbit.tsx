@@ -203,20 +203,31 @@ export default function HeroOrbit() {
       // Adjust position if scaled item would go off-screen
       let finalX = x;
       let finalY = y;
+      const isRightSide = x > w * 0.5;
       
       if (isThisHovered) {
-        const expandedWidth = base * 2.2; // Increase width to accommodate text next to image
-        const halfWidth = expandedWidth / 2;
+        const expandedWidth = base * 2.2;
         const halfHeight = (base * finalScale) / 2;
         const padding = 20;
         
-        // Clamp X
-        if (finalX - halfWidth < padding) finalX = halfWidth + padding;
-        if (finalX + halfWidth > w - padding) finalX = w - halfWidth - padding;
+        // Clamping logic considering the expanded width and direction
+        if (isRightSide) {
+          // Text is on the left, card extends from (finalX + base/2 - expandedWidth) to (finalX + base/2)
+          const leftBound = finalX + (base/2) - expandedWidth;
+          const rightBound = finalX + (base/2);
+          if (leftBound < padding) finalX += (padding - leftBound);
+          if (rightBound > w - padding) finalX -= (rightBound - (w - padding));
+        } else {
+          // Text is on the right, card extends from (finalX - base/2) to (finalX - base/2 + expandedWidth)
+          const leftBound = finalX - (base/2);
+          const rightBound = finalX - (base/2) + expandedWidth;
+          if (leftBound < padding) finalX += (padding - leftBound);
+          if (rightBound > w - padding) finalX -= (rightBound - (w - padding));
+        }
         
         // Clamp Y
         if (finalY - halfHeight < padding) finalY = halfHeight + padding;
-        if (finalY + halfHeight > h - padding) finalY = h - halfHeight - padding;
+        if (finalY + halfHeight > h - padding) finalY = h - padding - halfHeight;
       }
 
       return (
@@ -238,7 +249,7 @@ export default function HeroOrbit() {
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className={`relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300 ${isThisHovered ? 'flex items-center' : ''}`}
+            className={`absolute top-0 ${isRightSide ? 'right-0' : 'left-0'} h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300 ${isThisHovered ? (isRightSide ? 'flex flex-row-reverse items-center' : 'flex items-center') : ''}`}
             style={{
               width: isThisHovered ? `${base * 2.2}px` : '100%'
             }}
@@ -251,13 +262,13 @@ export default function HeroOrbit() {
               />
             </div>
             {isThisHovered && (
-              <div className="flex-1 px-4 py-2 text-left animate-in slide-in-from-left-4 duration-300 flex flex-col justify-center min-w-0">
-                <div className="text-slate-900 font-bold text-lg mb-1 leading-tight truncate">{item.name}</div>
+              <div className={`flex-1 px-3 py-2 ${isRightSide ? 'text-right' : 'text-left'} animate-in slide-in-from-${isRightSide ? 'right' : 'left'}-4 duration-300 flex flex-col justify-center min-w-0`}>
+                <div className="text-slate-900 font-bold text-sm mb-0.5 leading-tight line-clamp-2">{item.name}</div>
                 {item.spec && (
-                  <div className="text-primary-600 font-semibold text-sm truncate">{item.spec}</div>
+                  <div className="text-primary-600 font-semibold text-[10px] line-clamp-1">{item.spec}</div>
                 )}
-                <div className="mt-4 inline-flex items-center text-[10px] text-primary-600 font-bold uppercase tracking-wider bg-primary-50 px-2 py-1 rounded w-fit">
-                  點擊查看詳情
+                <div className={`mt-3 inline-flex items-center text-[9px] text-primary-600 font-bold uppercase tracking-wider bg-primary-50 px-1.5 py-0.5 rounded w-fit ${isRightSide ? 'ml-auto' : ''}`}>
+                  點擊詳情
                 </div>
               </div>
             )}
