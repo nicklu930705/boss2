@@ -41,6 +41,11 @@ export const categories = [
         "id": "01_台塑保鮮耐熱袋",
         "name": "台塑保鮮耐熱袋",
         "cover": "/assets/02_食品保鮮耐熱袋/01_台塑保鮮耐熱袋/200x300mm_150枚/包裝正面圖__IMG_0243.JPG"
+      },
+      {
+        "id": "02_營潔平板式耐熱袋",
+        "name": "營潔平板式耐熱袋",
+        "cover": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/四兩裝_15.5x19.5cm/yingjie_bag_main.jpg"
       }
     ]
   },
@@ -547,6 +552,28 @@ export const products = [
       "size_or_type": "280x410mm",
       "capacity_or_dim": "100枚",
       "quantity": ""
+    }
+  },
+  {
+    "id": "02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm",
+    "categoryId": "02_食品保鮮耐熱袋",
+    "subcategoryId": "02_營潔平板式耐熱袋",
+    "name": "營潔平板式耐熱袋｜四兩裝 15.5x19.5cm",
+    "originalName": "四兩裝_15.5x19.5cm",
+    "images": [
+      {
+        "role": "包裝正面圖",
+        "path": "/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/四兩裝_15.5x19.5cm/yingjie_bag_main.jpg",
+        "note": "HDPE高密度聚乙烯，360張±5%",
+        "order": 0
+      }
+    ],
+    "specs": [],
+    "shared_images": [],
+    "parsedSpec": {
+      "size_or_type": "四兩裝",
+      "capacity_or_dim": "15.5x19.5cm",
+      "quantity": "360張"
     }
   },
   {
