@@ -9,7 +9,7 @@ const heroProductIds = [
   '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
   '01_清潔袋-04_醫療感染性廢棄物袋-封面',
-  '01_清潔袋-04_醫療感染性廢棄物袋-規格',
+  'fp-freezer-bag',
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
@@ -140,7 +140,7 @@ export default function HeroOrbit() {
     } else if (id === 'fp-zipper-storage') {
       coverImg = '/assets/hero/zipper_storage_l.jpg';
     } else if (id === 'fp-freezer-bag') {
-      coverImg = '/assets/hero/freezer_bag_l.jpg';
+      coverImg = '/assets/hero/freezer_bag_l_cover.jpg';
     } else if (id === '04_病媒防治-01_蟑螂防治-快點絕_0.5百分比凝膠餌劑') {
       coverImg = '/assets/hero/cockroach_bait.jpg';
     }
