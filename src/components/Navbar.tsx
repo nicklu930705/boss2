@@ -45,27 +45,29 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu button & logo - merged design for non-home pages */}
-        <div className="md:hidden flex justify-end items-center">
+        {/* Mobile menu button & logo - full width merged design for non-home pages */}
+        <div className="md:hidden flex items-center">
           {!isHomePage ? (
-            <div className="flex items-center bg-white shadow-lg border border-slate-100 rounded-2xl overflow-hidden">
-              <Link to="/" className="text-slate-900 font-bold px-5 py-3 border-r border-slate-100 transition-colors active:bg-slate-50 text-lg">
+            <div className="flex justify-between items-center w-full bg-white shadow-lg border border-slate-100 rounded-2xl overflow-hidden">
+              <Link to="/" className="text-slate-900 font-bold px-5 py-3 transition-colors active:bg-slate-50 text-lg">
                 侑安國際
               </Link>
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)} 
-                className="text-slate-600 hover:text-primary-600 focus:outline-none p-3 transition-colors active:bg-slate-50"
+                className="text-slate-600 hover:text-primary-600 focus:outline-none p-3 transition-colors active:bg-slate-50 border-l border-slate-100"
               >
                 {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           ) : (
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="bg-white shadow-lg border border-slate-100 text-slate-600 hover:text-primary-600 focus:outline-none p-3 rounded-2xl transition-all active:scale-95"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="flex justify-end w-full">
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                className="bg-white shadow-lg border border-slate-100 text-slate-600 hover:text-primary-600 focus:outline-none p-3 rounded-2xl transition-all active:scale-95"
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           )}
         </div>
 
