@@ -120,6 +120,7 @@ export default function HeroOrbit() {
     return {
       id: p.id,
       name: p.name,
+      spec: p.parsedSpec ? `${p.parsedSpec.size_or_type || ''} ${p.parsedSpec.capacity_or_dim || ''} ${p.parsedSpec.quantity || ''}`.trim() : '',
       coverImg
     };
   }).filter((item): item is NonNullable<typeof item> => Boolean(item));
@@ -242,6 +243,15 @@ export default function HeroOrbit() {
               alt={item.name} 
               className="w-full h-full object-contain" 
             />
+            {isThisHovered && (
+              <div className="absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-4 text-center animate-in fade-in zoom-in duration-300">
+                <div className="text-slate-900 font-bold text-lg mb-1 leading-tight">{item.name}</div>
+                {item.spec && (
+                  <div className="text-primary-600 font-semibold text-sm">{item.spec}</div>
+                )}
+                <div className="mt-3 text-[10px] text-slate-400 font-medium uppercase tracking-wider">點擊查看詳情</div>
+              </div>
+            )}
           </Link>
         </div>
       );
