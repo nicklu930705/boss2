@@ -123,7 +123,7 @@ export default function HeroOrbit() {
     } else if (id === '01_清潔袋-03_抽取式與業務用-超大_黑色_28張') {
       coverImg = '/assets/hero/clean_bag_pull_extra_large.jpg';
     } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸') {
-      coverImg = '/assets/hero/medical_waste_bag.jpg';
+      coverImg = '/assets/hero/medical_waste_bag_cover.png';
     } else if (id === '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚') {
       coverImg = '/assets/hero/food_bag_200x300.jpg';
     } else if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
