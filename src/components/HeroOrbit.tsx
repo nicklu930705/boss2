@@ -195,7 +195,7 @@ export default function HeroOrbit() {
         (h * 0.8) / base   // Max 80% of height
       );
       
-      const finalScale = isThisHovered ? Math.min(maxScale, 3.5) : scale;
+      const finalScale = isThisHovered ? Math.min(maxScale, 2.2) : scale;
       const finalRoll = isThisHovered ? 0 : roll;
       const finalPitch = isThisHovered ? 0 : pitch;
       const finalYaw = isThisHovered ? 0 : yaw;
@@ -206,9 +206,9 @@ export default function HeroOrbit() {
       const isRightSide = x > w * 0.5;
       
       if (isThisHovered) {
-        const expandedWidth = base * 2.2;
+        const expandedWidth = base * 2.0; // Reduced from 2.2 to 2.0
         const halfHeight = (base * finalScale) / 2;
-        const padding = 20;
+        const padding = 40; // Increased padding from 20 to 40
         
         // Clamping logic considering the expanded width and direction
         if (isRightSide) {
@@ -251,7 +251,7 @@ export default function HeroOrbit() {
             to={`/products/${encodeURIComponent(item.id)}`}
             className={`absolute top-0 ${isRightSide ? 'right-0' : 'left-0'} h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300 ${isThisHovered ? (isRightSide ? 'flex flex-row-reverse items-center' : 'flex items-center') : ''}`}
             style={{
-              width: isThisHovered ? `${base * 2.2}px` : '100%'
+              width: isThisHovered ? `${base * 2.0}px` : '100%'
             }}
           >
             <div className={`${isThisHovered ? 'w-[45%] flex-shrink-0' : 'w-full h-full'}`}>
