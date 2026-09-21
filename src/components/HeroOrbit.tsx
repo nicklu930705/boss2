@@ -205,16 +205,18 @@ export default function HeroOrbit() {
       let finalY = y;
       
       if (isThisHovered) {
-        const halfSize = (base * finalScale) / 2;
+        const expandedWidth = base * 2.2; // Increase width to accommodate text next to image
+        const halfWidth = expandedWidth / 2;
+        const halfHeight = (base * finalScale) / 2;
         const padding = 20;
         
         // Clamp X
-        if (finalX - halfSize < padding) finalX = halfSize + padding;
-        if (finalX + halfSize > w - padding) finalX = w - halfSize - padding;
+        if (finalX - halfWidth < padding) finalX = halfWidth + padding;
+        if (finalX + halfWidth > w - padding) finalX = w - halfWidth - padding;
         
         // Clamp Y
-        if (finalY - halfSize < padding) finalY = halfSize + padding;
-        if (finalY + halfSize > h - padding) finalY = h - halfSize - padding;
+        if (finalY - halfHeight < padding) finalY = halfHeight + padding;
+        if (finalY + halfHeight > h - padding) finalY = h - halfHeight - padding;
       }
 
       return (
@@ -236,20 +238,27 @@ export default function HeroOrbit() {
         >
           <Link
             to={`/products/${encodeURIComponent(item.id)}`}
-            className="relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300"
+            className={`relative w-full h-full block bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 p-2 hover:border-primary-400 overflow-hidden shadow-2xl transition-all duration-300 ${isThisHovered ? 'flex items-center' : ''}`}
+            style={{
+              width: isThisHovered ? `${base * 2.2}px` : '100%'
+            }}
           >
-            <img 
-              src={item.coverImg} 
-              alt={item.name} 
-              className="w-full h-full object-contain" 
-            />
+            <div className={`${isThisHovered ? 'w-[45%] flex-shrink-0' : 'w-full h-full'}`}>
+              <img 
+                src={item.coverImg} 
+                alt={item.name} 
+                className="w-full h-full object-contain" 
+              />
+            </div>
             {isThisHovered && (
-              <div className="absolute inset-0 bg-white/95 flex flex-col items-center justify-center p-4 text-center animate-in fade-in zoom-in duration-300">
-                <div className="text-slate-900 font-bold text-lg mb-1 leading-tight">{item.name}</div>
+              <div className="flex-1 px-4 py-2 text-left animate-in slide-in-from-left-4 duration-300 flex flex-col justify-center min-w-0">
+                <div className="text-slate-900 font-bold text-lg mb-1 leading-tight truncate">{item.name}</div>
                 {item.spec && (
-                  <div className="text-primary-600 font-semibold text-sm">{item.spec}</div>
+                  <div className="text-primary-600 font-semibold text-sm truncate">{item.spec}</div>
                 )}
-                <div className="mt-3 text-[10px] text-slate-400 font-medium uppercase tracking-wider">點擊查看詳情</div>
+                <div className="mt-4 inline-flex items-center text-[10px] text-primary-600 font-bold uppercase tracking-wider bg-primary-50 px-2 py-1 rounded w-fit">
+                  點擊查看詳情
+                </div>
               </div>
             )}
           </Link>
