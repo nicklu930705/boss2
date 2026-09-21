@@ -9,8 +9,6 @@ const heroProductIds = [
   '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
   '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸',
-  '01_清潔袋-01_一般捲取式-特大_70L',
-  '01_清潔袋-01_一般捲取式-超小_10L',
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
@@ -126,10 +124,6 @@ export default function HeroOrbit() {
       coverImg = '/assets/hero/clean_bag_pull_extra_large.jpg';
     } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸') {
       coverImg = '/assets/hero/medical_waste_bag.jpg';
-    } else if (id === '01_清潔袋-01_一般捲取式-特大_70L') {
-      coverImg = '/assets/hero/clean_bag_roll_70l.jpg';
-    } else if (id === '01_清潔袋-01_一般捲取式-超小_10L') {
-      coverImg = '/assets/hero/clean_bag_roll_10l.jpg';
     } else if (id === '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚') {
       coverImg = '/assets/hero/food_bag_200x300.jpg';
     } else if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
@@ -158,11 +152,11 @@ export default function HeroOrbit() {
   const w = dimensions.w;
   const h = dimensions.h;
   const mobile = w > 0 && w < 600;
-  const n = mobile ? 6 : 12;
+  const n = mobile ? 6 : 10;
   
-  // Pad items to length 12 by repeating
+  // Pad items to length 10 by repeating
   const displayItems = heroItems.length > 0 
-    ? Array.from({ length: 12 }, (_, i) => heroItems[i % heroItems.length])
+    ? Array.from({ length: 10 }, (_, i) => heroItems[i % heroItems.length])
     : [];
 
   const togglePause = () => {
