@@ -5,6 +5,7 @@ import { products } from '../data/store';
 
 // Pick representative products for the orbit (as close to 12 items for full orbit loop)
 const heroProductIds = [
+  '01_清潔袋-01_一般捲取式-大_45L',
   '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
   '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸',
@@ -13,7 +14,6 @@ const heroProductIds = [
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
-  '03_夾鏈袋-01_台塑LDPE夾鏈袋-00特小號_35x40mm',
   'fp-zipper-storage',
   'fp-freezer-bag',
   '04_病媒防治-01_蟑螂防治-快點絕_0.5百分比凝膠餌劑'
@@ -117,15 +117,31 @@ export default function HeroOrbit() {
       coverImg = p.shared_images[0].path;
     }
     
-    // Override image for specific cleaning bags
+    // Override image for specific cleaning bags with safe ASCII paths
     if (id === '01_清潔袋-01_一般捲取式-大_45L') {
-      coverImg = '/assets/01_清潔袋/01_一般捲取式/大_45L/大＿45L封面圖.png';
-    }
-    if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
-      coverImg = '/assets/01_清潔袋/02_拉繩式/大_45L_24張/drawstring_45l_24.png';
-    }
-    if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
-      coverImg = '/assets/02_食品保鮮耐熱袋/02_營潔平板式耐熱袋/306.jpg';
+      coverImg = '/assets/hero/taisu_45l_cover.png';
+    } else if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
+      coverImg = '/assets/hero/drawstring_45l_24.png';
+    } else if (id === '01_清潔袋-03_抽取式與業務用-超大_黑色_28張') {
+      coverImg = '/assets/hero/clean_bag_pull_extra_large.jpg';
+    } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸') {
+      coverImg = '/assets/hero/medical_waste_bag.jpg';
+    } else if (id === '01_清潔袋-01_一般捲取式-特大_70L') {
+      coverImg = '/assets/hero/clean_bag_roll_70l.jpg';
+    } else if (id === '01_清潔袋-01_一般捲取式-超小_10L') {
+      coverImg = '/assets/hero/clean_bag_roll_10l.jpg';
+    } else if (id === '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚') {
+      coverImg = '/assets/hero/food_bag_200x300.jpg';
+    } else if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
+      coverImg = '/assets/hero/yingjie_306.jpg';
+    } else if (id === '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm') {
+      coverImg = '/assets/hero/zipper_bag_08.jpg';
+    } else if (id === 'fp-zipper-storage') {
+      coverImg = '/assets/hero/zipper_storage_l.jpg';
+    } else if (id === 'fp-freezer-bag') {
+      coverImg = '/assets/hero/freezer_bag_l.jpg';
+    } else if (id === '04_病媒防治-01_蟑螂防治-快點絕_0.5百分比凝膠餌劑') {
+      coverImg = '/assets/hero/cockroach_bait.jpg';
     }
 
     return {
@@ -134,7 +150,7 @@ export default function HeroOrbit() {
       spec: p.parsedSpec ? `${p.parsedSpec.size_or_type || ''} ${p.parsedSpec.capacity_or_dim || ''} ${p.parsedSpec.quantity || ''}`.trim() : '',
       coverImg
     };
-  }).filter((item): item is NonNullable<typeof item> => Boolean(item));
+  }).filter((item): item is NonNullable<typeof item> => Boolean(item && item.coverImg));
 
   // The reference uses 12 items, but we only have 8 in heroItems. Let's pad it out by repeating to match the 12 count if needed,
   // or just use 10 for mobile, 12 for desktop as per reference logic.
@@ -145,7 +161,9 @@ export default function HeroOrbit() {
   const n = mobile ? 6 : 12;
   
   // Pad items to length 12 by repeating
-  const displayItems = Array.from({ length: 12 }, (_, i) => heroItems[i % heroItems.length]);
+  const displayItems = heroItems.length > 0 
+    ? Array.from({ length: 12 }, (_, i) => heroItems[i % heroItems.length])
+    : [];
 
   const togglePause = () => {
     setIsPaused(!isPaused);
