@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
@@ -6,6 +6,9 @@ import { useCart } from '../context/CartContext';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { items } = useCart();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -42,8 +45,16 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu button - positioned to the right */}
-        <div className="md:hidden flex justify-end items-center">
+        {/* Mobile menu button & logo - logo only visible when not on home page */}
+        <div className="md:hidden flex justify-between items-center">
+          {!isHomePage ? (
+            <Link to="/" className="bg-white shadow-lg border border-slate-100 text-slate-900 font-bold px-5 py-3 rounded-2xl transition-all active:scale-95 text-lg">
+              侑安國際
+            </Link>
+          ) : (
+            <div></div> /* Empty spacer when on home page */
+          )}
+          
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
             className="bg-white shadow-lg border border-slate-100 text-slate-600 hover:text-primary-600 focus:outline-none p-3 rounded-2xl transition-all active:scale-95"
