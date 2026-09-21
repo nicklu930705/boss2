@@ -129,7 +129,7 @@ export default function HeroOrbit() {
     } else if (id === '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm') {
       coverImg = '/assets/hero/yingjie_306.jpg';
     } else if (id === '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm') {
-      coverImg = '/assets/hero/zipper_bag_08_spec.jpg';
+      coverImg = '/assets/hero/zipper_bag_08_v2.jpg';
     } else if (id === 'fp-zipper-storage') {
       coverImg = '/assets/hero/zipper_storage_l.jpg';
     } else if (id === 'fp-freezer-bag') {
