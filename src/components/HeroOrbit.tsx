@@ -5,10 +5,10 @@ import { products } from '../data/store';
 
 // Pick representative products for the orbit (as close to 12 items for full orbit loop)
 const heroProductIds = [
-  '01_清潔袋-01_一般捲取式-大_45L',
   '01_清潔袋-02_拉繩式-大_45L_24張',
   '01_清潔袋-03_抽取式與業務用-超大_黑色_28張',
-  '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸',
+  '01_清潔袋-04_醫療感染性廢棄物袋-封面',
+  '01_清潔袋-04_醫療感染性廢棄物袋-規格',
   '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚',
   '02_食品保鮮耐熱袋-02_營潔平板式耐熱袋-四兩裝_15.5x19.5cm',
   '03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm',
@@ -89,7 +89,12 @@ export default function HeroOrbit() {
   const [phaseState, setPhaseState] = useState(phaseRef.current);
 
   const heroItems = heroProductIds.map(id => {
-    const p = products.find(p => p.id === id);
+    // Handle variants for medical bags
+    const baseId = id.includes('-封面') || id.includes('-規格') 
+      ? '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸' 
+      : id;
+
+    const p = products.find(p => p.id === baseId);
     if (!p) return null;
     
     // Find the first available image path
@@ -116,13 +121,13 @@ export default function HeroOrbit() {
     }
     
     // Override image for specific cleaning bags with safe ASCII paths
-    if (id === '01_清潔袋-01_一般捲取式-大_45L') {
-      coverImg = '/assets/hero/taisu_45l_cover.png';
-    } else if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
+    if (id === '01_清潔袋-02_拉繩式-大_45L_24張') {
       coverImg = '/assets/hero/drawstring_45l_24.png';
     } else if (id === '01_清潔袋-03_抽取式與業務用-超大_黑色_28張') {
       coverImg = '/assets/hero/clean_bag_pull_extra_large_v2.png';
-    } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-感染袋_多尺寸') {
+    } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-封面') {
+      coverImg = '/assets/hero/medical_waste_bag_cover_v2.png';
+    } else if (id === '01_清潔袋-04_醫療感染性廢棄物袋-規格') {
       coverImg = '/assets/hero/medical_waste_bag_spec.jpg';
     } else if (id === '02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚') {
       coverImg = '/assets/hero/food_bag_200x300.jpg';
