@@ -109,7 +109,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "中",
       "capacity_or_dim": "20L",
-      "quantity": "依實際包裝"
+      "quantity": "54張/捲"
     }
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "大",
       "capacity_or_dim": "45L",
-      "quantity": "依實際包裝"
+      "quantity": "30張/捲"
     }
   },
   {
@@ -153,7 +153,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "特大",
       "capacity_or_dim": "70L",
-      "quantity": "依實際包裝"
+      "quantity": "22張/捲"
     }
   },
   {
@@ -175,7 +175,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "超大",
       "capacity_or_dim": "90L",
-      "quantity": "依實際包裝"
+      "quantity": "16張/捲"
     }
   },
   {
@@ -197,7 +197,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "超小",
       "capacity_or_dim": "10L",
-      "quantity": "依實際包裝"
+      "quantity": "100張/捲"
     }
   },
   {
@@ -219,7 +219,7 @@ export const products = [
     "parsedSpec": {
       "size_or_type": "飯店旅館無心捲",
       "capacity_or_dim": "10L",
-      "quantity": ""
+      "quantity": "100張/捲"
     }
   },
   {
@@ -460,8 +460,8 @@ export const products = [
     "shared_images": [],
     "parsedSpec": {
       "size_or_type": "超特大",
-      "capacity_or_dim": "一般30張與加厚27張",
-      "quantity": ""
+      "capacity_or_dim": "一般與加厚",
+      "quantity": "一般 30張 / 加厚 27張"
     }
   },
   {
