@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, ShoppingCart, Info } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 import { products } from '../data/store';
 import { useCart } from '../context/CartContext';
 
@@ -24,6 +24,19 @@ export default function ProductDetail() {
   const [selectedImage, setSelectedImage] = useState(displayImages[0]?.path || '');
   const [quantity, setQuantity] = useState(1);
   const [showSuccess, setShowSuccess] = useState(false);
+
+  // Helper for arrow navigation
+  const handlePrevImage = () => {
+    const currentIndex = displayImages.findIndex(img => img.path === selectedImage);
+    const prevIndex = (currentIndex - 1 + displayImages.length) % displayImages.length;
+    setSelectedImage(displayImages[prevIndex].path);
+  };
+
+  const handleNextImage = () => {
+    const currentIndex = displayImages.findIndex(img => img.path === selectedImage);
+    const nextIndex = (currentIndex + 1) % displayImages.length;
+    setSelectedImage(displayImages[nextIndex].path);
+  };
 
   // Update selected image when spec changes
   useEffect(() => {
@@ -64,9 +77,29 @@ export default function ProductDetail() {
           
           {/* Image Gallery */}
           <div className="p-6 md:p-8 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col">
-            <div className="aspect-w-1 aspect-h-1 w-full mb-4 bg-white rounded-lg overflow-hidden border border-slate-200">
+            <div className="relative aspect-w-1 aspect-h-1 w-full mb-4 bg-white rounded-lg overflow-hidden border border-slate-200 group">
               {selectedImage ? (
-                <img src={selectedImage} alt={product.name} className="w-full h-full object-contain" />
+                <>
+                  <img src={selectedImage} alt={product.name} className="w-full h-full object-contain" />
+                  
+                  {/* Arrow Controls - only show if multiple images */}
+                  {displayImages.length > 1 && (
+                    <>
+                      <button 
+                        onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 shadow-md text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+                      <button 
+                        onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 shadow-md text-slate-700 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
+                    </>
+                  )}
+                </>
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-slate-400">無圖片</div>
               )}
