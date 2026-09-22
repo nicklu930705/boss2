@@ -32,7 +32,7 @@ export default function Home() {
     {
       id: 'series-food-heat',
       title: '保鮮耐熱袋',
-      desc: '耐高溫材質，適合熱食分裝與熱湯盛裝。',
+      desc: '高品質封口技術，強韌耐用防漏，適合熱食分裝與熱湯盛裝。',
       spec: '200x300mm / 280x410mm',
       img: '/assets/02_食品保鮮耐熱袋/01_台塑保鮮耐熱袋/200x300mm_150枚/包裝正面圖__IMG_0243.JPG', // TODO: process single item img
       link: '/products?category=02_食品保鮮耐熱袋'
