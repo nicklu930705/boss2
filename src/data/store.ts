@@ -548,8 +548,8 @@ export const products: Product[] = [
         "barcode": "",
         "images": [
           {
-            "role": "封面圖",
-            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "role": "系列規格圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
             "order": 1
           }
         ]
@@ -563,8 +563,8 @@ export const products: Product[] = [
         "barcode": "",
         "images": [
           {
-            "role": "封面圖",
-            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "role": "系列規格圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
             "order": 1
           }
         ]
@@ -578,8 +578,8 @@ export const products: Product[] = [
         "barcode": "",
         "images": [
           {
-            "role": "封面圖",
-            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "role": "系列規格圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
             "order": 1
           }
         ]
@@ -593,8 +593,8 @@ export const products: Product[] = [
         "barcode": "",
         "images": [
           {
-            "role": "封面圖",
-            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "role": "系列規格圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
             "order": 1
           }
         ]
@@ -608,8 +608,8 @@ export const products: Product[] = [
         "barcode": "",
         "images": [
           {
-            "role": "封面圖",
-            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "role": "系列規格圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
             "order": 1
           }
         ]
@@ -617,8 +617,8 @@ export const products: Product[] = [
     ],
     "shared_images": [
       {
-        "role": "系列規格圖",
-        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
+        "role": "封面圖",
+        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
         "order": 2
       }
     ],
