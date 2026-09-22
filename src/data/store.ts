@@ -810,7 +810,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "5號",
       "capacity_or_dim": "100x140mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -833,7 +833,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "6號",
       "capacity_or_dim": "120x170mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -856,7 +856,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "7號",
       "capacity_or_dim": "140x200mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -879,7 +879,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "8號",
       "capacity_or_dim": "170x240mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -902,7 +902,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "9號",
       "capacity_or_dim": "200x280mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -925,7 +925,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "10號",
       "capacity_or_dim": "240x340mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -948,7 +948,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "11號",
       "capacity_or_dim": "280x400mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
@@ -971,7 +971,7 @@ export const products: Product[] = [
     "parsedSpec": {
       "size_or_type": "12號",
       "capacity_or_dim": "340x450mm",
-      "quantity": ""
+      "quantity": "100張/包"
     }
   },
   {
