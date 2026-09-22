@@ -80,7 +80,13 @@ export default function ProductDetail() {
             <div className="relative aspect-w-1 aspect-h-1 w-full mb-4 bg-white rounded-lg overflow-hidden border border-slate-200 group">
               {selectedImage ? (
                 <>
-                  <img src={selectedImage} alt={product.name} className="w-full h-full object-contain" />
+                  <img 
+                    src={selectedImage} 
+                    alt={product.name} 
+                    className={`w-full h-full object-contain transition-transform duration-300 ${
+                      selectedImage.includes('封面圖') ? 'p-8' : 'p-2'
+                    }`} 
+                  />
                   
                   {/* Arrow Controls - only show if multiple images */}
                   {displayImages.length > 1 && (
