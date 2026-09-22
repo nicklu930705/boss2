@@ -77,7 +77,8 @@ export const getProductSortValue = (product: Product): number => {
  * 全局商品排序函數
  * 排序優先級：
  * 1. 類別排序 (categoryId): 清潔袋 -> 食品保鮮耐熱袋 -> 夾鏈袋 -> 病媒防治
- * 2. 尺寸排序 (getProductSortValue): 從小到大
+ * 2. 子類別排序 (subcategoryId): 確保如耐熱袋中「台塑」排在「營潔」之前
+ * 3. 尺寸排序 (getProductSortValue): 從小到大
  */
 export const sortProductsBySize = (products: Product[]): Product[] => {
   return [...products].sort((a, b) => {
@@ -86,7 +87,12 @@ export const sortProductsBySize = (products: Product[]): Product[] => {
       return a.categoryId.localeCompare(b.categoryId);
     }
 
-    // 2. 同類別內，按尺寸從小到大排序
+    // 2. 按子類別 ID 排序 (確保台塑排在營潔之前)
+    if (a.subcategoryId !== b.subcategoryId) {
+      return a.subcategoryId.localeCompare(b.subcategoryId);
+    }
+
+    // 3. 同子類別內，按尺寸從小到大排序
     const valA = getProductSortValue(a);
     const valB = getProductSortValue(b);
     
@@ -94,7 +100,7 @@ export const sortProductsBySize = (products: Product[]): Product[] => {
       return valA - valB;
     }
     
-    // 3. 尺寸也相同時，按名稱排序
+    // 4. 尺寸也相同時，按名稱排序
     return a.name.localeCompare(b.name);
   });
 };
