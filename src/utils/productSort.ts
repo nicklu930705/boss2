@@ -1,5 +1,5 @@
 
-import { Product } from '../types/product';
+import { Product } from '../data/store';
 
 /**
  * 計算商品的尺寸分數，用於從小到大排序
