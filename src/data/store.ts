@@ -670,7 +670,7 @@ export const products: Product[] = [
     "specs": [],
     "shared_images": [],
     "parsedSpec": {
-      "size_or_type": "00特小號",
+      "size_or_type": "00號",
       "capacity_or_dim": "35x40mm",
       "quantity": "100張/包"
     }
@@ -693,7 +693,7 @@ export const products: Product[] = [
     "specs": [],
     "shared_images": [],
     "parsedSpec": {
-      "size_or_type": "00號",
+      "size_or_type": "0號",
       "capacity_or_dim": "40x60mm",
       "quantity": "100張/包"
     }
