@@ -158,7 +158,9 @@ export default function HeroOrbit() {
   // The reference: const mobile=w<600, n=mobile?10:12;
   const w = dimensions.w;
   const h = dimensions.h;
-  const mobile = w > 0 && w < 600;
+  // Improved mobile detection: use window.innerWidth as fallback if w is not yet measured
+  const currentW = w || (typeof window !== 'undefined' ? window.innerWidth : 0);
+  const mobile = currentW > 0 && currentW < 600;
   const n = mobile ? 6 : 10;
   
   // Pad items to length 10 by repeating
@@ -271,9 +273,11 @@ export default function HeroOrbit() {
             height: `${base}px`,
             zIndex: finalZIndex,
             transform: `translate3d(${finalX}px,${finalY}px,0) translate(-50%,-50%) scale(${finalScale}) rotate(${finalRoll}deg) perspective(1100px) rotateX(${finalPitch}deg) rotateY(${finalYaw}deg)`,
-            transition: isThisHovered 
-              ? 'transform 0.3s ease-out, z-index 0.1s' 
-              : 'transform 0.5s ease-out, z-index 0.2s',
+            transition: mobile 
+              ? 'none' // Disable transition on mobile to prevent shivering/jittering
+              : (isThisHovered 
+                  ? 'transform 0.3s ease-out, z-index 0.1s' 
+                  : 'transform 0.5s ease-out, z-index 0.2s'),
             willChange: 'transform, z-index'
           }}
         >
