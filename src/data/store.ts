@@ -540,11 +540,11 @@ export const products: Product[] = [
     "images": [],
     "specs": [
       {
-        "id": "medical-waste-bag-s",
-        "size": "S",
-        "label": "小型",
-        "dimensions": [45, 50],
-        "sheets_per_box": 0,
+        "id": "medical-waste-bag-8l",
+        "size": "8L",
+        "label": "8L",
+        "dimensions": [39, 40],
+        "sheets_per_box": 40,
         "barcode": "",
         "images": [
           {
@@ -555,11 +555,11 @@ export const products: Product[] = [
         ]
       },
       {
-        "id": "medical-waste-bag-m",
-        "size": "M",
-        "label": "中型",
-        "dimensions": [53, 60],
-        "sheets_per_box": 0,
+        "id": "medical-waste-bag-20l",
+        "size": "20L",
+        "label": "20L",
+        "dimensions": [52, 55],
+        "sheets_per_box": 22,
         "barcode": "",
         "images": [
           {
@@ -570,11 +570,11 @@ export const products: Product[] = [
         ]
       },
       {
-        "id": "medical-waste-bag-l",
-        "size": "L",
-        "label": "大型",
-        "dimensions": [65, 75],
-        "sheets_per_box": 0,
+        "id": "medical-waste-bag-50l",
+        "size": "50L",
+        "label": "50L",
+        "dimensions": [69, 78],
+        "sheets_per_box": 12,
         "barcode": "",
         "images": [
           {
@@ -585,11 +585,26 @@ export const products: Product[] = [
         ]
       },
       {
-        "id": "medical-waste-bag-xl",
-        "size": "XL",
-        "label": "特大",
-        "dimensions": [80, 90],
-        "sheets_per_box": 0,
+        "id": "medical-waste-bag-70l",
+        "size": "70L",
+        "label": "70L",
+        "dimensions": [77, 92],
+        "sheets_per_box": 8,
+        "barcode": "",
+        "images": [
+          {
+            "role": "封面圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "medical-waste-bag-90l",
+        "size": "90L",
+        "label": "90L",
+        "dimensions": [95, 84],
+        "sheets_per_box": 12,
         "barcode": "",
         "images": [
           {
