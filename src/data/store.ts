@@ -237,6 +237,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜超小型 10L",
     "originalName": "超小_10L",
+    "description": "採用高品質 HDPE 原料，強韌耐用不易破裂。平底封口設計，增加承重空間，適合一般家庭、辦公室日常垃圾收集使用。",
     "images": [
       {
         "role": "規格圖",
@@ -259,6 +260,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜飯店旅館無心捲型 10L",
     "originalName": "飯店旅館無心捲_10L",
+    "description": "專為飯店旅館設計的無心捲規格，節省空間且更換便利。採用高品質 HDPE 材質，強韌抗拉扯，是專業住宿空間清潔的優質選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -281,6 +283,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜大型 45L",
     "originalName": "大_45L_24張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -303,6 +306,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜巨無霸型 130L",
     "originalName": "巨無霸_130L_20張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -325,6 +329,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜特大型 70L",
     "originalName": "特大_70L_18張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -347,6 +352,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜超大型 90L",
     "originalName": "超大_90L_14張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -369,6 +375,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜超大超值包型 90L",
     "originalName": "超大超值包_90L_25張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -391,6 +398,7 @@ export const products: Product[] = [
     "subcategoryId": "02_拉繩式",
     "name": "台塑拉繩清潔袋｜超特大型 125L",
     "originalName": "超特大_125L_15張",
+    "description": "獨特拉繩設計，一拉即收，不髒手且封口快速便利。採用加厚強韌材質，抗刺穿力強，適合廚房及各類居家清潔使用。",
     "images": [
       {
         "role": "規格圖",
@@ -413,6 +421,7 @@ export const products: Product[] = [
     "subcategoryId": "03_抽取式與業務用",
     "name": "台塑清潔袋(抽取/業務用)｜超大 黑色",
     "originalName": "超大_黑色_28張",
+    "description": "專業級大容量設計，滿足高強度清理需求。加厚材質提供優異的抗刺穿與承重能力，是大型活動、工地或營業場所清潔的理想選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -435,6 +444,7 @@ export const products: Product[] = [
     "subcategoryId": "03_抽取式與業務用",
     "name": "台塑清潔袋(抽取/業務用)｜超巨大 165L",
     "originalName": "超巨大_165L_22張",
+    "description": "專業級大容量設計，滿足高強度清理需求。加厚材質提供優異的抗刺穿與承重能力，是大型活動、工地或營業場所清潔的理想選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -457,6 +467,7 @@ export const products: Product[] = [
     "subcategoryId": "03_抽取式與業務用",
     "name": "台塑清潔袋(抽取/業務用)｜超巨霸 260L",
     "originalName": "超巨霸_260L_17張",
+    "description": "專業級大容量設計，滿足高強度清理需求。加厚材質提供優異的抗刺穿與承重能力，是大型活動、工地或營業場所清潔的理想選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -479,6 +490,7 @@ export const products: Product[] = [
     "subcategoryId": "03_抽取式與業務用",
     "name": "台塑清潔袋(抽取/業務用)｜超特大 125L",
     "originalName": "超特大_125L_21張",
+    "description": "專業級大容量設計，滿足高強度清理需求。加厚材質提供優異的抗刺穿與承重能力，是大型活動、工地或營業場所清潔的理想選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -501,6 +513,7 @@ export const products: Product[] = [
     "subcategoryId": "03_抽取式與業務用",
     "name": "台塑清潔袋(抽取/業務用)｜超特大 一般30張與加厚27張",
     "originalName": "超特大_一般30張與加厚27張",
+    "description": "專業級大容量設計，滿足高強度清理需求。提供一般型與加厚型兩種規格選擇，具備優異的抗刺穿與承重能力，是各類專業清潔的最佳選擇。",
     "images": [
       {
         "role": "雙款規格圖",
@@ -523,6 +536,7 @@ export const products: Product[] = [
     "subcategoryId": "04_醫療感染性廢棄物袋",
     "name": "醫療感染性廢棄物袋",
     "originalName": "感染袋_多尺寸",
+    "description": "符合醫療廢棄物處理標準，採用高密度強韌材質，防漏性極佳。鮮明顏色與警示標誌，確保醫療廢棄物收集過程的安全性與規範性。",
     "images": [
       {
         "role": "系列規格圖",
@@ -551,6 +565,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑保鮮耐熱袋",
     "name": "台塑保鮮耐熱袋｜200x300mm 150枚",
     "originalName": "200x300mm_150枚",
+    "description": "選用 100% 全新食品級原料，不含塑化劑，符合衛生安全標準。耐熱性佳，適用於食材保鮮、分裝與加熱，是廚房料理與食品儲存的安心首選。",
     "images": [
       {
         "role": "包裝正面圖",
@@ -585,6 +600,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑保鮮耐熱袋",
     "name": "台塑保鮮耐熱袋｜280x410mm 100枚",
     "originalName": "280x410mm_100枚",
+    "description": "選用 100% 全新食品級原料，不含塑化劑，符合衛生安全標準。耐熱性佳，適用於食材保鮮、分裝與加熱，是廚房料理與食品儲存的安心首選。",
     "images": [
       {
         "role": "包裝正面圖",
@@ -619,6 +635,7 @@ export const products: Product[] = [
     "subcategoryId": "02_營潔平板式耐熱袋",
     "name": "營潔平板式耐熱袋｜四兩裝 15.5x19.5cm",
     "originalName": "四兩裝_15.5x19.5cm",
+    "description": "選用 100% 全新食品級原料，不含塑化劑，符合衛生安全標準。耐熱性佳，適用於食材保鮮、分裝與加熱，是廚房料理與食品儲存的安心首選。",
     "images": [
       {
         "role": "包裝正面圖",
@@ -641,6 +658,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜0號",
     "originalName": "00特小號_35x40mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -663,6 +681,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜0號",
     "originalName": "00號_40x60mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -685,6 +704,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜1號",
     "originalName": "01號_50x70mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -707,6 +727,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜2號",
     "originalName": "02號_60x85mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -729,6 +750,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜3號",
     "originalName": "03號_70x100mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -751,6 +773,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜4號",
     "originalName": "04號_85x120mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -773,6 +796,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜5號",
     "originalName": "05號_100x140mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -795,6 +819,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜6號",
     "originalName": "06號_120x170mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -817,6 +842,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜7號",
     "originalName": "07號_140x200mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -862,6 +888,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜9號",
     "originalName": "09號_200x280mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -884,6 +911,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜10號",
     "originalName": "10號_240x340mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -906,6 +934,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜11號",
     "originalName": "11號_280x400mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -928,6 +957,7 @@ export const products: Product[] = [
     "subcategoryId": "01_台塑LDPE夾鏈袋",
     "name": "台塑夾鏈袋｜12號",
     "originalName": "12號_340x450mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
@@ -950,6 +980,7 @@ export const products: Product[] = [
     "subcategoryId": "01_蟑螂防治",
     "name": "00",
     "originalName": "00_蟑螂知識素材",
+    "description": "提供專業的蟑螂防治衛教知識，幫助您了解蟑螂的習性與危害，並掌握正確的防治方法，維護居家環境衛生。",
     "images": [
       {
         "role": "蟑螂危害說明圖",
@@ -972,6 +1003,7 @@ export const products: Product[] = [
     "subcategoryId": "01_蟑螂防治",
     "name": "快點絕",
     "originalName": "快點絕_0.5百分比凝膠餌劑",
+    "description": "專業級滅蟑配方，誘引力強且連鎖滅除效果顯著。針筒式設計方便施藥於縫隙死角，是居家與營業場所環境衛生維護的專業選擇。",
     "images": [
       {
         "role": "01_包裝與針筒主圖",
@@ -1024,6 +1056,7 @@ export const products: Product[] = [
     "subcategoryId": "02_老鼠防治",
     "name": "一錠鼠",
     "originalName": "一錠鼠_滅鼠餌劑",
+    "description": "強力誘引配方搭配高效滅鼠成分，針對老鼠習性設計。投藥簡便，能有效解決鼠患問題，維護環境整潔與衛生安全。",
     "images": [
       {
         "role": "01_包裝主圖",
@@ -1076,6 +1109,7 @@ export const products: Product[] = [
     "subcategoryId": "02_台塑保鮮密實袋",
     "name": "台塑保鮮密實袋",
     "originalName": "台塑保鮮密實袋",
+    "description": "加厚材質設計，具備優異的防潮與保鮮功能。強化夾鏈封口，能有效防止異味混雜與液體滲漏，適合冰箱冷藏儲存與食材保鮮。",
     "images": [],
     "specs": [
       {
@@ -1150,6 +1184,7 @@ export const products: Product[] = [
     "subcategoryId": "03_台塑保鮮冷凍袋",
     "name": "台塑保鮮冷凍袋",
     "originalName": "台塑保鮮冷凍袋",
+    "description": "專為冷凍環境設計的加厚材質，耐低溫且不易脆裂。強效夾鏈封口能嚴密隔絕空氣，防止食材凍傷與水分流失，是冷凍儲存的最佳選擇。",
     "images": [],
     "specs": [
       {
