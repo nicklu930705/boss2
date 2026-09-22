@@ -94,6 +94,12 @@ export default function ProductDetail() {
             </div>
             <h1 className="text-3xl font-bold text-slate-900 mb-4">{product.name}</h1>
             
+            {product.description && (
+              <div className="mb-6 text-slate-600 leading-relaxed bg-primary-50/30 p-4 rounded-xl border border-primary-100/50">
+                <p>{product.description}</p>
+              </div>
+            )}
+            
             <div className="bg-slate-50 text-slate-700 p-4 rounded-lg flex items-start mb-6 border border-slate-200">
               <Info className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5 text-slate-500" />
               <div className="text-sm leading-relaxed">

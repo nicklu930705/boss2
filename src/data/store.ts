@@ -28,6 +28,7 @@ export interface Product {
   subcategoryId: string;
   name: string;
   originalName?: string;
+  description?: string;
   images: ProductImage[];
   specs: ProductSpec[];
   shared_images: ProductImage[];
@@ -144,6 +145,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜中型 20L",
     "originalName": "中_20L",
+    "description": "採用高品質 HDPE 原料，強韌耐用不易破裂。平底封口設計，增加承重空間，適合一般家庭、辦公室日常垃圾收集使用。",
     "images": [
       {
         "role": "規格圖",
@@ -166,6 +168,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜大型 45L",
     "originalName": "大_45L",
+    "description": "經典大型規格，適用於大多數標準垃圾桶。特殊的防漏封口技術，能有效防止液體滲出，是居家清潔的最佳幫手。",
     "images": [
       {
         "role": "規格圖",
@@ -188,6 +191,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜特大型 70L",
     "originalName": "特大_70L",
+    "description": "加厚型強韌設計，適合處理較重或體積較大的垃圾。廣泛應用於餐廳、社區與商業空間，提供優異的抗刺穿能力。",
     "images": [
       {
         "role": "規格圖",
@@ -210,6 +214,7 @@ export const products: Product[] = [
     "subcategoryId": "01_一般捲取式",
     "name": "台塑清潔袋｜超大型 90L",
     "originalName": "超大_90L",
+    "description": "專業級超大容量，滿足高強度清理需求。一捲多張，經濟實惠，是大型活動、工地或營業場所清潔的理想選擇。",
     "images": [
       {
         "role": "規格圖",
@@ -832,8 +837,9 @@ export const products: Product[] = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜8號",
+    "name": "台塑夾鏈袋｜8 號",
     "originalName": "08號_170x240mm",
+    "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
       {
         "role": "規格圖",
