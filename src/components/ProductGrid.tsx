@@ -102,20 +102,35 @@ export default function ProductGrid() {
                     >
                       {cat.name}
                     </button>
-                    {/* Subcategories (Desktop only or expanded if active) */}
+                    {/* Subcategories (Desktop: always nested; Mobile: horizontal list below parent) */}
                     {categoryFilter === cat.id && cat.subcategories && cat.subcategories.length > 0 && (
-                      <ul className="pl-4 mt-1 space-y-1 hidden lg:block">
+                      <>
+                        {/* Desktop view */}
+                        <ul className="pl-4 mt-1 space-y-1 hidden lg:block">
+                          {cat.subcategories.map(sub => (
+                            <li key={sub.id}>
+                              <button
+                                onClick={() => handleCategoryChange(cat.id, sub.id)}
+                                className={`w-full text-left px-2 py-1.5 text-sm rounded transition ${subcategoryFilter === sub.id ? 'text-primary-600 font-bold bg-primary-50/50' : 'text-slate-600 hover:text-primary-600 hover:bg-slate-50'}`}
+                              >
+                                {sub.name}
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                        {/* Mobile view: absolute positioned or just horizontal list? 
+                            Let's add them as inline siblings for mobile horizontal scroll */}
                         {cat.subcategories.map(sub => (
-                          <li key={sub.id}>
+                          <li key={sub.id} className="lg:hidden">
                             <button
                               onClick={() => handleCategoryChange(cat.id, sub.id)}
-                              className={`w-full text-left px-2 py-1.5 text-sm rounded transition ${subcategoryFilter === sub.id ? 'text-primary-600 font-bold bg-primary-50/50' : 'text-slate-600 hover:text-primary-600 hover:bg-slate-50'}`}
+                              className={`whitespace-nowrap px-3 py-2 rounded-md transition border ${subcategoryFilter === sub.id ? 'bg-primary-50 text-primary-700 font-bold border-primary-200' : 'hover:bg-slate-50 border-transparent'}`}
                             >
                               {sub.name}
                             </button>
                           </li>
                         ))}
-                      </ul>
+                      </>
                     )}
                   </li>
                 ))}
