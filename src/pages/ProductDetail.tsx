@@ -135,11 +135,11 @@ export default function ProductDetail() {
                   <table className="w-full text-sm text-left">
                     <tbody className="divide-y divide-slate-100">
                       <tr>
-                        <th className="py-2 text-slate-500 w-24">款式/尺寸</th>
+                        <th className="py-2 text-slate-500 w-24">款式</th>
                         <td className="py-2 font-medium">{selectedSpec.label} ({selectedSpec.size})</td>
                       </tr>
                       <tr>
-                        <th className="py-2 text-slate-500">容量/規格</th>
+                        <th className="py-2 text-slate-500">規格</th>
                         <td className="py-2 font-medium">{selectedSpec.dimensions.join(' × ')} cm</td>
                       </tr>
                       <tr>
@@ -171,11 +171,11 @@ export default function ProductDetail() {
                   <table className="w-full text-sm text-left mb-4">
                     <tbody className="divide-y divide-slate-100">
                       <tr>
-                        <th className="py-2 text-slate-500 w-24">款式/尺寸</th>
+                        <th className="py-2 text-slate-500 w-24">款式</th>
                         <td className="py-2 font-medium">{product.parsedSpec?.size_or_type || '-'}</td>
                       </tr>
                       <tr>
-                        <th className="py-2 text-slate-500">容量/規格</th>
+                        <th className="py-2 text-slate-500">規格</th>
                         <td className="py-2 font-medium">{product.parsedSpec?.capacity_or_dim || '-'}</td>
                       </tr>
                       <tr>
