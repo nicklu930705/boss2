@@ -537,27 +537,77 @@ export const products: Product[] = [
     "name": "醫療感染性廢棄物袋",
     "originalName": "感染袋_多尺寸",
     "description": "符合醫療廢棄物處理標準，採用高密度強韌材質，防漏性極佳。鮮明顏色與警示標誌，確保醫療廢棄物收集過程的安全性與規範性。",
-    "images": [
+    "images": [],
+    "specs": [
+      {
+        "id": "medical-waste-bag-s",
+        "size": "S",
+        "label": "小型",
+        "dimensions": [45, 50],
+        "sheets_per_box": 0,
+        "barcode": "",
+        "images": [
+          {
+            "role": "封面圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "medical-waste-bag-m",
+        "size": "M",
+        "label": "中型",
+        "dimensions": [53, 60],
+        "sheets_per_box": 0,
+        "barcode": "",
+        "images": [
+          {
+            "role": "封面圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "medical-waste-bag-l",
+        "size": "L",
+        "label": "大型",
+        "dimensions": [65, 75],
+        "sheets_per_box": 0,
+        "barcode": "",
+        "images": [
+          {
+            "role": "封面圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "medical-waste-bag-xl",
+        "size": "XL",
+        "label": "特大",
+        "dimensions": [80, 90],
+        "sheets_per_box": 0,
+        "barcode": "",
+        "images": [
+          {
+            "role": "封面圖",
+            "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+            "order": 1
+          }
+        ]
+      }
+    ],
+    "shared_images": [
       {
         "role": "系列規格圖",
         "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
-        "note": "",
-        "order": 0
-      },
-      {
-        "role": "封面圖",
-        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
-        "note": "",
-        "order": 1
+        "order": 2
       }
     ],
-    "specs": [],
-    "shared_images": [],
-    "parsedSpec": {
-      "size_or_type": "感染袋",
-      "capacity_or_dim": "多尺寸",
-      "quantity": "依需求訂製"
-    }
+    "parsedSpec": null
   },
   {
     "id": "02_食品保鮮耐熱袋-01_台塑保鮮耐熱袋-200x300mm_150枚",
