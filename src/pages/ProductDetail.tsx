@@ -84,7 +84,7 @@ export default function ProductDetail() {
                     src={selectedImage} 
                     alt={product.name} 
                     className={`w-full h-full object-contain transition-transform duration-300 ${
-                      selectedImage.includes('封面圖') ? 'p-8' : 'p-2'
+                      selectedImage.includes('封面圖') ? 'scale-75 p-4' : 'p-2'
                     }`} 
                   />
                   
@@ -119,7 +119,7 @@ export default function ProductDetail() {
                     onClick={() => setSelectedImage(img.path)}
                     className={`aspect-w-1 aspect-h-1 rounded-md overflow-hidden border-2 transition ${selectedImage === img.path ? 'border-primary-500' : 'border-transparent hover:border-primary-300'}`}
                   >
-                    <img src={img.path} alt={img.role || '商品圖片'} className="w-full h-full object-cover" />
+                    <img src={img.path} alt={img.role || '商品圖片'} className="w-full h-full object-contain bg-white p-1" />
                   </button>
                 ))}
               </div>
