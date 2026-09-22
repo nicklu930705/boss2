@@ -28,7 +28,7 @@ export const categories = [
       {
         "id": "04_醫療感染性廢棄物袋",
         "name": "醫療感染性廢棄物袋",
-        "cover": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/感染袋_多尺寸/系列規格圖__IMG_0215.JPG"
+        "cover": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG"
       }
     ]
   },
@@ -473,9 +473,15 @@ export const products = [
     "images": [
       {
         "role": "系列規格圖",
-        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/感染袋_多尺寸/系列規格圖__IMG_0215.JPG",
+        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/系列規格圖__IMG_0215.JPG",
         "note": "",
         "order": 0
+      },
+      {
+        "role": "封面圖",
+        "path": "/assets/01_清潔袋/04_醫療感染性廢棄物袋/醫療感染性廢棄物袋封面圖.png",
+        "note": "",
+        "order": 1
       }
     ],
     "specs": [],
@@ -580,7 +586,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-00特小號_35x40mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜00號",
+    "name": "台塑夾鏈袋｜0號",
     "originalName": "00特小號_35x40mm",
     "images": [
       {
@@ -602,7 +608,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-00號_40x60mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜00號",
+    "name": "台塑夾鏈袋｜0號",
     "originalName": "00號_40x60mm",
     "images": [
       {
@@ -624,7 +630,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-01號_50x70mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜01號",
+    "name": "台塑夾鏈袋｜1號",
     "originalName": "01號_50x70mm",
     "images": [
       {
@@ -646,7 +652,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-02號_60x85mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜02號",
+    "name": "台塑夾鏈袋｜2號",
     "originalName": "02號_60x85mm",
     "images": [
       {
@@ -668,7 +674,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-03號_70x100mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜03號",
+    "name": "台塑夾鏈袋｜3號",
     "originalName": "03號_70x100mm",
     "images": [
       {
@@ -690,7 +696,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-04號_85x120mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜04號",
+    "name": "台塑夾鏈袋｜4號",
     "originalName": "04號_85x120mm",
     "images": [
       {
@@ -712,7 +718,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-05號_100x140mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜05號",
+    "name": "台塑夾鏈袋｜5號",
     "originalName": "05號_100x140mm",
     "images": [
       {
@@ -734,7 +740,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-06號_120x170mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜06號",
+    "name": "台塑夾鏈袋｜6號",
     "originalName": "06號_120x170mm",
     "images": [
       {
@@ -756,7 +762,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-07號_140x200mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜07號",
+    "name": "台塑夾鏈袋｜7號",
     "originalName": "07號_140x200mm",
     "images": [
       {
@@ -778,7 +784,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-08號_170x240mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜08號",
+    "name": "台塑夾鏈袋｜8號",
     "originalName": "08號_170x240mm",
     "images": [
       {
@@ -800,7 +806,7 @@ export const products = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-09號_200x280mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜09號",
+    "name": "台塑夾鏈袋｜9號",
     "originalName": "09號_200x280mm",
     "images": [
       {

@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Search, Plus } from 'lucide-react';
 import { products, categories } from '../data/store';
 import { useCart } from '../context/CartContext';
+import { sortProductsBySize } from '../utils/productSort';
 
 export default function QuickOrder() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,11 +11,12 @@ export default function QuickOrder() {
   const [addedItems, setAddedItems] = useState<Record<string, boolean>>({});
 
   const filteredProducts = useMemo(() => {
-    return products.filter(p => {
+    const filtered = products.filter(p => {
       const matchCat = categoryFilter ? p.categoryId === categoryFilter : true;
       const matchSearch = p.name.includes(searchTerm) || p.categoryId.includes(searchTerm);
       return matchCat && matchSearch;
     });
+    return sortProductsBySize(filtered);
   }, [categoryFilter, searchTerm]);
 
   const orderableItems = useMemo(() => {

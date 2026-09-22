@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { products, categories } from '../data/store';
+import { sortProductsBySize } from '../utils/productSort';
 
 export default function ProductGrid() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,7 +32,7 @@ export default function ProductGrid() {
   const filteredProducts = useMemo(() => {
     const q = initialSearch.toLowerCase().replace(/[\sxX×]/g, '');
     
-    return products.filter(p => {
+    const filtered = products.filter(p => {
       const matchCat = categoryFilter ? p.categoryId === categoryFilter : true;
       const matchSub = subcategoryFilter ? p.subcategoryId === subcategoryFilter : true;
       
@@ -40,6 +41,8 @@ export default function ProductGrid() {
       
       return matchCat && matchSub && matchSearch;
     });
+
+    return sortProductsBySize(filtered);
   }, [categoryFilter, subcategoryFilter, initialSearch]);
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
