@@ -17,14 +17,18 @@ export default function ProductGrid() {
   // Sync search input with URL after a small delay
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const newParams = new URLSearchParams(searchParams);
-      if (searchTerm) {
-        newParams.set('q', searchTerm);
-      } else {
-        newParams.delete('q');
+      const newParams = new URLSearchParams(window.location.search);
+      const currentQ = newParams.get('q') || '';
+      
+      if (searchTerm !== currentQ) {
+        if (searchTerm) {
+          newParams.set('q', searchTerm);
+        } else {
+          newParams.delete('q');
+        }
+        newParams.set('page', '1'); // reset page on search
+        setSearchParams(newParams);
       }
-      newParams.set('page', '1'); // reset page on search
-      setSearchParams(newParams);
     }, 500);
     return () => clearTimeout(timeoutId);
   }, [searchTerm, setSearchParams]);
