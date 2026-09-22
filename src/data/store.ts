@@ -679,7 +679,7 @@ export const products: Product[] = [
     "id": "03_夾鏈袋-01_台塑LDPE夾鏈袋-00號_40x60mm",
     "categoryId": "03_夾鏈袋",
     "subcategoryId": "01_台塑LDPE夾鏈袋",
-    "name": "台塑夾鏈袋｜0號",
+    "name": "台塑夾鏈袋｜00號",
     "originalName": "00號_40x60mm",
     "description": "高品質食品級 PE 材質，透明度高，方便內容物辨識。獨家雙軌夾鏈技術，密封性極佳，適合乾貨、文具、衣物或各類生活小物分類收納。",
     "images": [
