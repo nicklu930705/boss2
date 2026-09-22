@@ -160,7 +160,7 @@ export default function ProductDetail() {
                           : 'border-slate-300 bg-white text-slate-700 hover:border-primary-400'
                       }`}
                     >
-                      {spec.label} ({spec.size})
+                      {spec.label}
                     </button>
                   ))}
                 </div>
@@ -175,7 +175,7 @@ export default function ProductDetail() {
                     <tbody className="divide-y divide-slate-100">
                       <tr>
                         <th className="py-2 text-slate-500 w-24">款式</th>
-                        <td className="py-2 font-medium">{selectedSpec.label} ({selectedSpec.size})</td>
+                        <td className="py-2 font-medium">{selectedSpec.label}</td>
                       </tr>
                       <tr>
                         <th className="py-2 text-slate-500">規格</th>
