@@ -77,14 +77,14 @@ export default function ProductDetail() {
           
           {/* Image Gallery */}
           <div className="p-6 md:p-8 bg-slate-50 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col">
-            <div className="relative aspect-w-1 aspect-h-1 w-full mb-4 bg-white rounded-lg overflow-hidden border border-slate-200 group">
+            <div className="relative aspect-w-1 aspect-h-1 w-full max-h-[350px] mb-4 bg-white rounded-lg overflow-hidden border border-slate-200 group flex items-center justify-center">
               {selectedImage ? (
                 <>
                   <img 
                     src={selectedImage} 
                     alt={product.name} 
-                    className={`w-full h-full object-contain transition-transform duration-300 ${
-                      selectedImage.includes('封面圖') ? 'scale-75 p-4' : 'p-2'
+                    className={`w-full transition-transform duration-300 object-contain ${
+                      selectedImage.includes('封面圖') ? 'h-[288px] p-4' : 'h-full max-h-[350px] p-2'
                     }`} 
                   />
                   
