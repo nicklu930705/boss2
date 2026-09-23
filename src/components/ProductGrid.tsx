@@ -37,6 +37,9 @@ export default function ProductGrid() {
     const q = initialSearch.toLowerCase().replace(/[\sxX×]/g, '');
     
     const filtered = products.filter(p => {
+      // Filter out non-sellable items when viewing "All Products"
+      if (!categoryFilter && !subcategoryFilter && p.notForSale) return false;
+      
       const matchCat = categoryFilter ? p.categoryId === categoryFilter : true;
       const matchSub = subcategoryFilter ? p.subcategoryId === subcategoryFilter : true;
       
@@ -198,8 +201,12 @@ export default function ProductGrid() {
                     </div>
                     
                     <div className="mt-auto pt-3 border-t border-slate-100 flex items-center justify-between">
-                      <span className="text-slate-400 text-xs sm:text-sm group-hover:text-primary-600 transition-colors">查看規格</span>
-                      <span className="text-accent-600 font-bold text-xs sm:text-sm bg-accent-50 px-2 py-1 rounded">批量詢價</span>
+                      <span className="text-slate-400 text-xs sm:text-sm group-hover:text-primary-600 transition-colors">
+                        {product.notForSale ? '查看詳情' : '查看規格'}
+                      </span>
+                      {!product.notForSale && (
+                        <span className="text-accent-600 font-bold text-xs sm:text-sm bg-accent-50 px-2 py-1 rounded">批量詢價</span>
+                      )}
                     </div>
                   </div>
                 </Link>

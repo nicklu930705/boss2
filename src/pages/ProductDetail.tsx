@@ -139,12 +139,14 @@ export default function ProductDetail() {
               </div>
             )}
             
-            <div className="bg-slate-50 text-slate-700 p-4 rounded-lg flex items-start mb-6 border border-slate-200">
-              <Info className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5 text-slate-500" />
-              <div className="text-sm leading-relaxed">
-                價格、運費與交期由專人確認。
+            {!product.notForSale && (
+              <div className="bg-slate-50 text-slate-700 p-4 rounded-lg flex items-start mb-6 border border-slate-200">
+                <Info className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5 text-slate-500" />
+                <div className="text-sm leading-relaxed">
+                  價格、運費與交期由專人確認。
+                </div>
               </div>
-            </div>
+            )}
 
             {hasSpecs && (
               <div className="mb-6">
@@ -233,38 +235,46 @@ export default function ProductDetail() {
               )}
             </div>
 
-            <div className="mt-auto border-t border-slate-100 pt-6">
-              <div className="flex items-center mb-6">
-                <span className="mr-4 font-medium text-slate-700">訂購數量</span>
-                <div className="flex items-center border border-slate-300 rounded-md">
-                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-3 py-1 hover:bg-slate-100 text-slate-600">-</button>
-                  <input
-                    type="number"
-                    min="1"
-                    value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-16 text-center py-1 border-x border-slate-300 focus:outline-none"
-                  />
-                  <button onClick={() => setQuantity(quantity + 1)} className="px-3 py-1 hover:bg-slate-100 text-slate-600">+</button>
+            {!product.notForSale ? (
+              <div className="mt-auto border-t border-slate-100 pt-6">
+                <div className="flex items-center mb-6">
+                  <span className="mr-4 font-medium text-slate-700">訂購數量</span>
+                  <div className="flex items-center border border-slate-300 rounded-md">
+                    <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="px-3 py-1 hover:bg-slate-100 text-slate-600">-</button>
+                    <input
+                      type="number"
+                      min="1"
+                      value={quantity}
+                      onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                      className="w-16 text-center py-1 border-x border-slate-300 focus:outline-none"
+                    />
+                    <button onClick={() => setQuantity(quantity + 1)} className="px-3 py-1 hover:bg-slate-100 text-slate-600">+</button>
+                  </div>
+                  <span className="ml-3 text-slate-500">{hasSpecs ? '盒' : '件'}</span>
                 </div>
-                <span className="ml-3 text-slate-500">{hasSpecs ? '盒' : '件'}</span>
-              </div>
 
-              <div className="flex space-x-4">
-                <button
-                  onClick={handleAdd}
-                  className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md font-bold text-lg flex items-center justify-center transition shadow-sm"
-                >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                  加入需求清單
-                </button>
-              </div>
-              {showSuccess && (
-                <div className="mt-3 text-green-600 text-sm font-medium text-center animate-fade-in">
-                  已成功加入需求清單！
+                <div className="flex space-x-4">
+                  <button
+                    onClick={handleAdd}
+                    className="flex-1 bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-md font-bold text-lg flex items-center justify-center transition shadow-sm"
+                  >
+                    <ShoppingCart className="w-5 h-5 mr-2" />
+                    加入需求清單
+                  </button>
                 </div>
-              )}
-            </div>
+                {showSuccess && (
+                  <div className="mt-3 text-green-600 text-sm font-medium text-center animate-fade-in">
+                    已成功加入需求清單！
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="mt-auto border-t border-slate-100 pt-6">
+                <div className="bg-primary-50 p-4 rounded-xl text-primary-800 text-center font-medium border border-primary-100">
+                  此為衛教宣導素材，非販售商品
+                </div>
+              </div>
+            )}
             
           </div>
         </div>

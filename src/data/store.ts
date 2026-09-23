@@ -33,6 +33,7 @@ export interface Product {
   specs: ProductSpec[];
   shared_images: ProductImage[];
   parsedSpec: ParsedSpec | null;
+  notForSale?: boolean;
 }
 
 export interface Subcategory {
@@ -1060,7 +1061,8 @@ export const products: Product[] = [
       "size_or_type": "00",
       "capacity_or_dim": "蟑螂知識素材",
       "quantity": ""
-    }
+    },
+    "notForSale": true
   },
   {
     "id": "04_病媒防治-01_蟑螂防治-快點絕_0.5百分比凝膠餌劑",
